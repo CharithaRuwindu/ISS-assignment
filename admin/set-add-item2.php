@@ -241,7 +241,12 @@ $(document).ready(function(){
 				$.ajax({
 					url:'upload.php',
 					method:'POST',
-					data:{image:base64data,data2:"<?php echo $datagg; ?>"},
+					data:{image:base64data,data2:
+					      "<?php
+					      	$datagg = htmlspecialchars($_GET['datagg']);
+					      	echo $datagg;
+					      //echo $datagg; 
+					      ?>"},
 					success:function(data)
 					{
 						$modal.modal('hide');
