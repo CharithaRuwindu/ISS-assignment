@@ -189,7 +189,7 @@ $kategori = $datanya_explode['5'];;
     
   </tr>
   
-  <tr>
+  <!-- <tr>
     <td>Deskripsi</td>
     <td> <textarea style="
     -webkit-box-sizing: border-box;
@@ -202,7 +202,24 @@ $kategori = $datanya_explode['5'];;
 " type="text" name="deskripsi"><?php echo $deskripsi?></textarea></td>
      
     
-  </tr>
+  </tr> -->
+
+  <tr>
+  <td>Deskripsi</td>
+  <td>
+    <textarea style="
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+
+      width: 100%;
+      max-width: 800px;
+      height: 200px;
+    " type="text" name="deskripsi">
+      <?php echo htmlspecialchars($deskripsi); ?>
+    </textarea>
+  </td>
+</tr>
 
 </table>
 
