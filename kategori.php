@@ -199,7 +199,9 @@ $searchfor = strtolower(RemoveSpecialChar(base64_encode($_GET['data'])));
 
 <div class="pembungkus">
     
-   <font face="Century Gothic" color="white"><h3>&nbsp;&nbsp;kategori <?php echo $_GET['data'];?></h3></font>
+   <font face="Century Gothic" color="white"><h3>&nbsp;&nbsp;kategori <?php //echo $_GET['data'];
+       echo htmlspecialchars($_GET['data'], ENT_QUOTES, 'UTF-8');
+       ?></h3></font>
 <ul class="nav" align="center">
 
      
