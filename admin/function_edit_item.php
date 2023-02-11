@@ -85,8 +85,15 @@ $data_kategori = "$pakaian $alat $listrik $elektronik $aksesoris $perabotan";
 
 
 
-$edited_string = "$nama_item|$harga_item|$kode_item|$path_image_item|$deskripsi_item|$data_kategori\n";
+//$edited_string = "$nama_item|$harga_item|$kode_item|$path_image_item|$deskripsi_item|$data_kategori\n";
+//file_put_contents($path,implode("",array_map(function($data){global $edited_string,$kode_item;return stristr($data,"$kode_item")?"$edited_string":$data;},file($path))));
+
+//echo $nama_item;
+
+$sanitized_nama_item = htmlspecialchars($nama_item, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
+$edited_string = "$sanitized_nama_item|$harga_item|$kode_item|$path_image_item|$deskripsi_item|$data_kategori\n";
 file_put_contents($path,implode("",array_map(function($data){global $edited_string,$kode_item;return stristr($data,"$kode_item")?"$edited_string":$data;},file($path))));
 
-echo $nama_item;
+echo $sanitized_nama_item;
 ?>
